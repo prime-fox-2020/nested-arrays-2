@@ -11,8 +11,17 @@ let roster = [
 
 // [[roster[0][0], roster[1][0]], [roster[0][1], roster[1][1]],...
 
-function convert_roster_format (nestedArray) {
+function convert_roster_format (value) {
   // your convert code here
+  let kotak = [];
+  for(let i = 1; i < value.length; i++) {
+    let obj = {};
+    for(let j = 0; j < value[i].length; j++) {
+      obj[value[0][j]] = value[i][j];
+    }
+    kotak.push(obj);
+  }
+  return kotak;
 }
 
 let object_roster = convert_roster_format(roster)
